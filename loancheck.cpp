@@ -1,24 +1,31 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
+    std::string customerName;
     int age;
-    string loan;
-    //Enter the customers name
-    getline(cin, Customersname);
-    cout<<"your name is:"<<Customersname <<endl;
-    cin>>name;
-    //Enter the customers age
-    cout<<"Your age is:"<<Customersage<<endl;
-    if (age<=22) 
-    //Enter the customers Bank Balance
-    cout<<"Please enter bank balance:"<<Customers Bank Balance <<endl;
+    double bankBalance;
+    std::string crbStatus;
+    int customerPeriod;
+    //Enter the customer's information
+    std::cout<<"Loan Qualification\n";
+    std::cout<<"Enter your full name:";
+    std::getline(std::cin, customerName);
+    std::cout<<"Enter age";
+    std::cin>>age;
+    std::cout<<"Enter your bank balance:";
+    std::cin>>bankBalance;
+    std::cin.ignore();
+    std::cout<<"Enter your crb status (good/bad):";
+    std::getline(std::cin, crbStatus);
+    std:cout<<"Enter the period of being a customer:";
+    std::cin>>customerPeriod;
+    //Check loan qualification
+    if (age > 22 && bankBalance>50000 &&crbStatus== "good" && customerPeriod>6){
+        std::cout<<"There is good news for you,"<<customerName<<"You have qualified for the loan.\n";
+    }else{
+        std::cout<<"I have sad news for you,"<<customerName<<"You have not met the requirements for a loan\n";
     }
-    if (bank balance>=50,000)
+    return 0;
     }
-    //Enter the customers CRB status
-    else if (CRB status=='good')
-    cout<<"Please enter CRB status";
-    //Enter duration of been a customer
-    if (duration>=6)
-

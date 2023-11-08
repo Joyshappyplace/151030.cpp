@@ -1,50 +1,51 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-int main () {
-    int age;
-    string movieType;
-    double ticketPrice = 0.0;
-
-    //Enter age of the user
-    cout<<"Please enter your age:";
+int main()
+{
+    int age, ticket_price;
+    string movie_type;
+    cout<<"Movie types: Regular, 3D.";
+    cout<<"Enter movie type: ";
+   getline(cin,movie_type);
+    if(movie_type == "Regular"){
+        cout<<"Enter age: ";
+        cin>>age;
+        if (age>=8&&age<=14){
+            ticket_price = 600;
+            cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
+        }
+        if (age>=15&&age<=17){
+            ticket_price = 800;
+            cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
+        }
+        if (age>=18){
+            ticket_price = 1000;
+            cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
+        }
+        else{
+            cout<<"Enter correct details.";
+        }
+        }
+else if(movie_type == "3D"){
+    cout<<"Enter age: ";
     cin>>age;
-
-    //Enter the type of movie
-    cout<<"Please enter the type of movie:";
-    getline(cin, movieType);
-
-    //Enter the ticket price with age and movie type as determinants
-    if (age<0&&age>50){
-        cout<<"Invalid age entered. Please enter a valid age."<<endl;
+    if(age>=8&&age<=14){
+        ticket_price = 800;
+        cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
     }
-    else if (movieType=="regular"){
-        if (age<5){
-            ticketPrice=300;
-        }
-        else if (age>=16&&50){
-            ticketPrice=500;
-        }
-        else {
-            ticketPrice=700;
-        }
+    if(age>=15&&age<=26){
+        ticket_price = 1000;
+        cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
     }
-else if (movieType=="3D"){
-    if (age<5){
-        ticketPrice= 400;
-    }
-    else if (age>= 18&&age<50){
-        ticketPrice=650;
+    if(age>=18){
+        ticket_price = 1200;
+        cout<<"The ticket price is Ksh: "<<ticket_price<<endl;
     }
     else{
-        ticketPrice=600;
+        cout<<"Kindly pay that amount.";
     }
-}else{
-    cout<<"Invalid type of movie entered. Please enter the correct type of movie."<<endl;
 }
-//Enter the ticket price
-if (ticketPrice>0){
-    cout<<"Ticket price: ksh"<<ticketPrice<<endl;
-    return 0;
+else{
+    cout<<"Kindly pay that amount.";
 }
 }
